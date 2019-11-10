@@ -1,0 +1,1 @@
+gcc -o clientBat clientBat.c libws2_32.a >3.txt

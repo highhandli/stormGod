@@ -1,0 +1,1 @@
+gcc -o client client.c libws2_32.a 2>2.txt

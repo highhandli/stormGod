@@ -1,0 +1,28 @@
+SELECT KEY WHERE KEY['a','b']              /*显示总数量，每次返回100条，等待用户输入，直到finish为止*//*长连接*/
+SELECT VALUE WHERE KEY['a','b']            /*显示总数量，每次返回100条，等待用户输入，直到finish为止*//*长连接*/
+SELECT KEY WHERE VALUE['a','b']            /*显示总数量，每次返回100条，等待用户输入，直到finish为止*//*长连接*/
+SELECT VALUE WHERE VALUE['a','b']          /*显示总数量，每次返回100条，等待用户输入，直到finish为止*//*长连接*/
+SELECT KEY, VALUE WHERE KEY['a','b']       /*显示总数量，每次返回100条，等待用户输入，直到finish为止*//*长连接*/
+/*上面的where条件，记得在客户端校验值的大小*/
+SELECT MIN                                 /*查看最小key*/
+SELECT MAX                                 /*查看最大key*/
+SELECT COUNT WHERE KEY['a','b']
+
+DELETE WHERE KEY['a','b'] USING user BY password
+
+UNLOAD TO file WHERE KEY ['a','b']         /*将数据导出到文件*/
+LOAD FROM file USING user BY password      /*从文件导入数据*/
+
+EXIT USING user BY password                /*正常退出程序*/
+FLUSH USING user BY password               /*将内存数据写入到硬盘文件*/
+RAM TO DISC USING user BY password         /*将内存数据写入到硬盘数据*/
+
+ALTER THREADS TO size1, size2 USING user BY password /*增加线程数量，只能增，不能减*/
+ALTER DISCS TO size USING user BY password /*修改文件最大值*/
+ALTER UPPERS to size USING user BY password/*修改文件递增值*/
+
+SHOW RAMS                                  /*显示内存使用情况*/
+SHOW DISCS                                 /*显示硬盘使用情况*/
+SHOW THREADS                               /*显示长连接和短连接线程数量*/
+SHOW KEYS                                  /*显示key的数量*/
+SHOW LOOPS                                 /*显示级数*/

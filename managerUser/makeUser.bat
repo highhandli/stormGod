@@ -1,0 +1,1 @@
+gcc -o managerUser managerUser.c libws2_32.a 2>1.txt
